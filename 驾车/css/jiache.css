@@ -1,0 +1,407 @@
+.routeShowList_scroll{
+display: block;
+width: 365px;
+margin-top: 10px;
+overflow-y: auto;
+position: relative;
+overflow: hidden;
+
+}
+.dive_top{
+	margin: 10px 0px 0px 10px;
+min-width: 300px;
+
+}
+.dive_top li {
+    float: left;
+    display: inline;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+}
+.dir_fast_hov {
+    width: 101px;
+    height: 18px;
+    border: 1px solid #cccccc;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgb(204, 204, 204);
+    background: #5596de;
+    color: #FFF;
+    border-right: none;
+}
+.dir_shor {
+    width: 99px;
+    border: 1px solid #cccccc;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: rgb(204, 204, 204);
+    border-right: none;
+    height: 18px;
+}
+.dir_walk {
+    width: 98px;
+    height: 18px;
+    border: 1px solid #cccccc;
+}
+
+.allkm {
+    float: left;
+    margin: 10px 0px 10px 10px;
+    height: 34px;
+    color: #5596de;
+}
+.allkm_left {
+    float: left;
+    display: inline;
+    width: 10px;
+}
+.allkm_con {
+    background: #e8eff6;
+    width: 262px;
+    padding-left: 18px;
+    height: 34px;
+    float: left;
+    display: inline;
+}
+.allkm_con span {
+    float: left;
+    display: block;
+    line-height: 34px;
+    font-weight: bolder;
+}
+.allkm_rt {
+    float: left;
+    display: inline;
+    width: 10px;
+}
+.diver_tit {
+    margin: 6px 29px 0px 18px;
+    height: 23px;
+}
+.diver_tit_left {
+    float: left;
+    display: inline;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    height: 23px;
+    line-height: 23px;
+}
+.routeLineStart {
+    float: left;
+    display: inline;
+    width: 23px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(../img/mainImage.png) no-repeat -4px -4px;
+}
+
+.diver_tit_rt {
+    float: right;
+    display: inline;
+    width: 120px;
+    margin-top: 4px;
+    cursor: pointer;
+    font-size: 12px;
+color: #333;
+
+}
+.routeAllRouteListFx {
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin-right: 2px;
+    background: url(../img/mainImage.png) no-repeat -47px -54px;
+}
+.diver_load {
+    margin: 0px 18px 0px 10px;
+    overflow: auto;
+    padding: 10px 10px 0px 16px;
+    border-bottom: 1px solid #e8eff6;
+}
+.diver_con_left {
+    float: left;
+    display: inline;
+    width: 20px;
+    color: #5596de;
+}
+.diver_con_con {
+    float: left;
+    display: inline;
+    line-height: 18px;
+    width: 250px;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+.diver_con_exp {
+    float: left;
+    display: inline;
+    width: 228px;
+    color: #333333;
+}
+.diver_con_rt {
+    float: right;
+    display: inline;
+    margin-top: 6px;
+    width: 7px;
+    height: 5px;
+    background: url(../img/mainImage.png) no-repeat;
+      
+        background-position: -20px -61px;
+}
+.details {
+    width: 210px;
+    display: none;
+}
+.details p {
+    padding: 8px 0 6px;
+    color: #333333;
+}
+
+.diver_last {
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+    height: 23px;
+    line-height: 23px;
+    margin: 10px 0px 0px 19px;
+}
+
+.routeLineDest {
+    float: left;
+    display: inline;
+    width: 23px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(../img/mainImage.png) no-repeat -32px -4px;
+}
+.routeAllRouteListFx_open {
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin-right: 2px;
+    background: url(../img/mainImage.png) no-repeat -47px -67px;
+}
+.jia_jiahao {
+    background: url(../img/mainImage.png) no-repeat -236px -79px;
+    width: 27px;
+    height: 25px;
+    float: left;
+    display: block;
+    text-align: center;
+    margin: 6px 7px 0px 0px;
+    float: right;
+    cursor: pointer;
+}
+.sousuo3{
+	position: relative;
+}
+.addrout {
+    /*display: none;*/
+   float: left;
+    width: 132px;
+    border: 1px solid #cccccc;
+    border-bottom: none;
+    position: absolute;
+    top: 6px;
+    left: 130px;
+    background: #fff;
+    z-index: 1106;
+    display: none;
+}
+.add_tj {
+    border-bottom: 1px solid #cccccc;
+    height: 23px;
+}
+.add_tj_left {
+    float: left;
+    display: block;
+    background: url(../img/add2.jpg) no-repeat;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    color: #FFF;
+    margin: 3px 3px 0px 3px;
+    line-height: 17px;
+}
+.add_tj_exp {
+    width: 92px;
+    height: 23px;
+    line-height: 23px;
+    border: none;
+    border: 0;
+    float: left;
+    display: inline;
+}
+.delet{
+    float: left;
+    display: block;
+    margin: 6px 5px 0px 3px;
+    cursor: pointer;
+}
+.sousuo_con{
+	line-height: 0;
+}
+.change_top {
+    margin: 12px 0px 0px 19px;
+    width: 295px;
+    height: 27px;
+}
+.change_start_left {
+    float: left;
+    display: inline;
+    line-height: 23px;
+    cursor: pointer;
+}
+.change_dest_left {
+    float: left;
+    display: inline;
+    line-height: 23px;
+    cursor: pointer;
+}
+
+.routeSelectStart {
+    float: left;
+    display: inline;
+    width: 23px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(../img/mainImage.png) no-repeat -4px -80px;
+}
+.change_start_left span {
+    border-bottom: 1px solid #32b85f;
+    font-size: 14px;
+    color: #31b75e;
+    font-weight: bolder;
+}
+.change_top_rt {
+    float: right;
+    display: inline;
+    background: url(../img/mainImage.png) no-repeat -304px -35px;
+    width: 71px;
+    height: 18px;
+    cursor: pointer;
+    margin-top: 2px;
+}
+.routeSelectDest {
+    float: left;
+    display: inline;
+    width: 23px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(../img/mainImage.png) no-repeat -30px -80px;
+}
+.change_dest_left span {
+    border-bottom: 1px solid #FA5466;
+    font-size: 14px;
+    color: #FA5466;
+    font-weight: bolder;
+}
+.beg_con {
+    border: 1px solid #e8eff7;
+    width: 310px;
+    overflow: auto;
+    margin-left: 10px;
+    padding-bottom: 10px;
+    display: none;
+}
+.pub_beg {
+    width: 300px;
+    margin-top: 7px;
+    margin-left: 4px;
+    overflow: auto;
+    padding: 3px 0px 5px 0px;
+}
+.pub_beg_left {
+    float: left;
+    display: inline;
+    width: 27px;
+    height: 25px;
+    background: url(../img/mainImage.png) no-repeat -4px -397px;
+        background-position-x: -4px;
+        background-position-y: -397px;
+    margin-left: 6px;
+}
+.pub_beg_con {
+    float: left;
+    display: inline;
+    width: 193px;
+}
+.beg_tit {
+    color: #5596de;
+    height: auto;
+}
+.beg_towtit {
+    color: #666666;
+    line-height: 20px;
+}
+.pub_beg_rt {
+    float: right;
+    display: inline;
+    cursor: pointer;
+    background: url(../img/mainImage.png) no-repeat ;
+    background-position:-147px -35px ;
+    width: 71px;
+    height: 18px;
+    margin-top: 7px;
+}
+.route_start_2 .pub_beg_left{
+	background: url(../img/mainImage.png) no-repeat -4px -397px;
+        background-position-x: -35px;
+        background-position-y: -397px;
+}
+
+.route_start_3 .pub_beg_left{
+	background: url(../img/mainImage.png) no-repeat -4px -397px;
+        background-position-x: -63px;
+        background-position-y: -397px;
+}
+
+.route_start_4 .pub_beg_left{
+	background: url(../img/mainImage.png) no-repeat -4px -397px;
+        background-position-x: -92px;
+        background-position-y: -397px;
+}
+
+.route_start_5 .pub_beg_left{
+	background: url(../img/mainImage.png) no-repeat -4px -397px;
+        background-position-x: -122px;
+        background-position-y: -397px;
+}
+
+.bpgd {
+    width: 310px;
+    margin: auto;
+        margin-top: auto;
+    margin-top: 15px;
+    padding-bottom: 35px;
+}
+.bpgdal {
+    float: left;
+    display: inline;
+    margin-left: 6px;
+    padding: 1px 4px;
+    color: #999999;
+    font-weight: bolder;
+    border: 1px solid #fff;
+    font-size: 14px;
+}
+.bpgd_a {
+    float: left;
+    display: inline;
+    margin-left: 4px;
+    border: 1px solid #cccccc;
+    padding: 2px 6px;
+    color: #999999;
+}
+.pub_last_rt {
+    float: right;
+    display: inline;
+    cursor: pointer;
+    background: url(../img/mainImage.png) no-repeat;
+    background-position: -67px -35px ;
+    width: 71px;
+    height: 18px;
+    margin-top: 7px;
+}

@@ -1,0 +1,177 @@
+.allbus{
+	display: block;
+    width: 330px;
+    /*border-top: 1px solid rgb(204, 204, 204);*/
+    height: 1500px;
+    position: relative;
+ 	overflow: hidden;
+}
+.dive_top{
+	margin: 10px 0px 0px 10px;
+    min-width: 300px;
+}
+.dive_top li {
+    float: left;
+    display: inline;
+    text-align: center;
+    line-height: 18px;
+    cursor: pointer;
+}
+.fast_hov {
+    width: 74px;
+    height: 18px;
+    background: #5596de;
+    border: 1px solid #CCC;
+    border-right: none;
+    color: #FFF;
+}
+.fewtransfer {
+    width: 73px;
+    border: 1px solid #cccccc;
+    border-right: none;
+    height: 18px;
+}
+.walk {
+    width: 73px;
+    height: 18px;
+    border: 1px solid #cccccc;
+}
+.bus_clik {
+    background: url(../img/busclik.jpg) repeat;
+    width: 300px;
+    border-bottom: 1px solid #5596de;
+    margin: 10px 0px 0px 10px;
+    padding-bottom: 5px;
+    overflow: auto;
+}
+.alltransfer {
+    background: url(../img/transferbg.png) repeat;
+    overflow: auto;
+    cursor: pointer;
+}
+.metro_con {
+    background: url(../img/metrobg.jpg) repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+.metro_con_top {
+    background: url(../img/metrobgtop.jpg) no-repeat;
+    overflow: auto;
+}
+.transfer_top_left {
+    float: left;
+    display: inline;
+    width: 22px;
+    color: #FFF;
+    font-weight: bold;
+    padding: 1px 0px 0px 6px;
+}
+.transfer_top_con {
+    float: left;
+    display: inline;
+    width: 211px;
+    margin-top: 4px;
+}
+.allline {
+    color: #5596de;
+    font-weight: bolder;
+    line-height: 19px;
+}
+.transfer_top_rt {
+    float: left;
+    display: inline;
+    margin-top: 9px;
+    width: 48px;
+}
+.km {
+    color: #333333;
+    float: left;
+    display: inline;
+    margin-left: 26px;
+    margin-top: 4px;
+}
+.transfer_time {
+    float: right;
+    color: #999999;
+    float: right;
+    display: inline;
+    margin: 4px 10px 0px 0px;
+}
+.metro_con_bom {
+    background: url(../img/metrobgbom.jpg) no-repeat;
+    height: 6px;
+    display: block;
+}
+.transfer_bom {
+    background: url(../img/transferbom.png) no-repeat;
+    width: 300px;
+    height: 9px;
+    overflow: hidden;
+    display: none;
+}
+.metro_beg {
+    background: url(../img/diverbeg.png) no-repeat;
+    padding-left: 30px;
+    margin: 5px 0px 0px 9px;
+    font-weight: bolder;
+    font-size: 14px;
+    color: #333333;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+}
+.metro_load {
+    margin: 0px 1px 0px 1px;
+    padding: 0px 0px 0px 12px;
+    border-bottom: 1px solid #e8eff6;
+    cursor: pointer;
+}
+.metro_pub {
+    overflow: auto;
+    padding: 0px 0px 0px 0px;
+}
+.metro_pub_left {
+    float: left;
+    display: inline;
+    width: 22px;
+    background: url(../img/mainImage.png) -205px -7px no-repeat;
+    margin: 7px 7px 0px -2px;
+    height: 15px;
+    line-height: 20px;
+}
+.metro_pub_rt {
+    float: left;
+    display: inline;
+    width: 251px;
+    padding: 5px 0px;
+}
+.metro_rt_left {
+    float: left;
+    display: inline;
+    width: 192px;
+    color: #333333;
+    line-height: 20px;
+}
+.metro_rt_left a {
+    color: #5696DE;
+    cursor: pointer;
+}
+.metro_rt_rt {
+    float: right;
+    display: inline;
+    color: #999999;
+}
+.metro_last {
+    background: url(../img/diverlast.png) no-repeat;
+    padding-left: 30px;
+    margin: 5px 0px 0px 9px;
+    font-weight: bolder;
+    font-size: 14px;
+    color: #333333;
+    height: 23px;
+    line-height: 23px;
+    cursor: pointer;
+}
+.bus_lose{
+	display: none;
+}

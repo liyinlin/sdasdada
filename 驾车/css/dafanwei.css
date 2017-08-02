@@ -1,0 +1,224 @@
+.fanhui{
+	height: 37px;
+	line-height: 37px;
+	background: #f5f5f5;
+	margin-top: 10px;
+}
+.fh,.fh_con{
+	font-size: 12px;
+	font-family: "宋体";
+	color: #666666;
+	display: inline-block;
+}
+.fh{
+	margin-left: 20px;
+	margin-right: 120px;
+}
+.fh span{
+	margin-right: 10px;
+}
+.fh_con span{
+	color: #ee9109;
+}
+.cun_title{
+	overflow: hidden;
+}
+.cun_title ul{
+	width: 274px;
+	/*height: 40px;*/
+	margin: 20px auto;
+}
+.cun_title ul li{
+	float: left;
+	width: 80px;
+	/*height: 12px;*/
+	margin-right: 10px;
+	text-align: left;
+	margin-bottom: 17px;
+}
+.cun_title li a{
+	font-size: 12px;
+	color: #3366cc;
+	font-family: "宋体";
+}
+.cun_title li a span,.city_down li span{
+	color: #333333;
+}
+.city_title{
+	margin-left: 47px;
+	font-size: 12px;
+	color: #3366cc;
+	font-family: "宋体";
+	cursor: pointer;
+}
+.city_title i{
+	float: left;
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	margin: 3px 5px 0px 0px;
+	background: url(../img/mainImage.png) no-repeat -53px -42px;
+
+}
+.city_down{
+	overflow-y: scroll;
+	margin-top: 12px;
+	height: 100%;
+	width: 80%;
+	overflow-x: hidden;
+}
+.city_down li{
+	margin-left: 60px;
+	font-size: 12px;
+	color: #3366cc;
+	font-family: "宋体";
+	margin-bottom: 12px;
+	cursor: pointer;
+}
+.city_down li i{
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	background-position:  0 0 ;
+	background-repeat: no-repeat;
+	background-image:url(../img/county1.png) ;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+.city_erji{display: none;}
+.city_erji li{
+	margin-left: 20px;
+	margin-bottom: 0;
+	margin-top: 12px;
+}
+.num1,.num2,.num3,.num4,.num5,.num6,.num7,.num8,.num9,.num10{
+	width:19px;
+	height: 22px;
+	display: inline-block;
+	background: url(../img/num1.png) 0 0 no-repeat;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.num2{
+	background: url(../img/num2.png) 0 0 no-repeat;
+}
+.num3{
+	background: url(../img/num3.png) 0 0 no-repeat;
+}
+.num4{
+	background: url(../img/nums4.png) 0 0 no-repeat;
+}
+.num5{
+	background: url(../img/num5.png) 0 0 no-repeat;
+}
+.num6{
+	background: url(../img/num6.png) 0 0 no-repeat;
+}
+.num7{
+	background: url(../img/num7.png) 0 0 no-repeat;
+}
+.num8{
+	background: url(../img/num8.png) 0 0 no-repeat;
+}
+.num9{
+	background: url(../img/num9.png) 0 0 no-repeat;
+}
+.num10{
+	background: url(../img/num10.png) 0 0 no-repeat;
+}
+.mar{
+	width:61px;
+	height: 24px;
+	display: inline-block;
+	background: url(../img/tscz.png) 0 0 no-repeat;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+.tsc{
+	color: #007daa;
+}
+.tsc_dz{
+	padding-left: 24px;
+}
+.fl_con .tscz li{
+	height: 80px;
+	margin-top: 0;
+	cursor: pointer;
+}
+.cz_xq li:hover .num1{
+	background: url(../img/nums1.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num2{
+	background: url(../img/nums2.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num3{
+	background: url(../img/nums3.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num4{
+	background: url(../img/num4.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num5{
+	background: url(../img/nums5.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num6{
+	background: url(../img/nums6.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num7{
+	background: url(../img/nums7.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num8{
+	background: url(../img/nums8.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num9{
+	background: url(../img/nums9.png) 0 0 no-repeat;
+}
+.cz_xq li:hover .num10{
+	background: url(../img/nums10.png) 0 0 no-repeat;
+}
+.fl_con .tscz{
+	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.fl_con .tscz li{
+	border: none;
+}
+.fl_con .tscz .cz_xq_out{
+	margin-left: 25px;
+	height: 79px;
+}
+.fl_con .fenye{
+text-align: center;
+border-bottom: none !important;}
+.fenye a{
+	display: inline-block;
+	border: 1px solid #e2e7f1;
+	color: #007daa;
+	font-family: "宋体";
+	font-size: 12px;
+	width: 22px;
+	height: 22px;
+	line-height: 22px;
+}
+.fenye p{
+	margin-top: 20px;
+	margin: 20px auto;
+	/*width: 280px;*/
+	text-align: center;
+}
+.fenye .first{
+	width: 35px;
+	height: 22px;
+	line-height: 22px;
+}
+.fenye .pre{
+	width: 50px;
+	height: 22px;
+	line-height: 22px;
+}
+.fenye .last{
+	width: 50px;
+	height: 22px;
+	line-height: 22px;
+}
+

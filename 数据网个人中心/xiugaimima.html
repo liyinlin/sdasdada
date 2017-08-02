@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/jibenxinxi.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header_in">
+				<div class="header_in_le">
+					<p class="tit">特色村镇数据网</p>
+					<p class="shu"></p>
+					<p class="gr">个人中心</p>
+				</div>
+				<div class="header_in_ri">
+					<p class="fh"><a class="fanhui"><span class="ditu"></span>返回地图</a></p>
+					<p class="shu1"></p>
+					<p class="tc"><a class="tuichu">退出</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="con_box">
+			<div class="nav">
+				<ul>
+					<li class="addc">
+						<a href="###">
+							<p class="xinxi_top">
+							<img src="img/nav_xinxi.png" />
+						</p>
+						<p class="xinxi_bot addb">基本信息</p>
+						</a>
+						
+					</li>
+					<li>
+						<a href="###">
+							<p class="xinxi_top">
+							<img src="img/nav_didian.png" />
+						</p>
+						<p class="xinxi_bot">我的地点</p>
+						</a>
+						
+					</li>
+					<li>
+						<a href="###">
+							<p class="xinxi_top">
+							<img src="img/nav_biaohui.png" />
+						</p>
+						<p class="xinxi_bot">我的标绘</p>
+						</a>
+						
+					</li>
+				</ul>
+			</div>
+			<div class="con_box_ri">
+				<div class="box_title">
+					<p class="box_title_le">基本信息</p>
+				</div>
+				<div class="con_box_ri_neirong">
+					<div class="neirong_tit">
+						修改密码
+					</div>
+					<div class="nr">
+					
+						<div>
+							<div class="clearfloat m_top">
+								<span class="le lle">原密码&nbsp;&nbsp;:</span>
+							<div class="neibu">
+								<p class="dizhi_out">
+									<input type="text" name="" id=""  class="xiangshidizhi mima"/>
+								<var class="dizhi_mima">请输入原密码</var>
+								</p>
+							</div>
+							</div>
+							
+						</div>
+						<div>
+							<div class="clearfloat m_top">
+								<span class="le lle">新密码&nbsp;&nbsp;:</span>
+							<div class="neibu">
+								<p class="dizhi_out">
+									<input type="text" name="" id=""  class="xiangshidizhi mimas"/>
+								<var class="dizhi_mimas">请输入新密码</var>
+								</p>
+							</div>
+							</div>
+							
+						</div>
+						<div>
+							<div class="clearfloat m_top">
+								<span class="le lle">确认新密码&nbsp;&nbsp;:</span>
+							<div class="neibu">
+								<p class="dizhi_out">
+									<input type="text" name="" id=""  class="xiangshidizhi mimass"/>
+								<var class="dizhi_mimass">请确认新密码</var>
+								</p>
+							</div>
+							</div>
+							
+						</div>
+						<div class="sbt">
+							<p>
+								<input type="button"  value="保存" class="baocun"/>
+								<input type="button"  value="取消" class="quxiao"/>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		$(window).load(function(){
+			var h=$(".header").height();
+		var he=$(window).height();
+		var hei=he-h;
+		 $(".con_box").height(hei);
+		})
+		
+	</script>
+	<script type="text/javascript" src="js/gerenzhongxin.js" ></script>
+</html>

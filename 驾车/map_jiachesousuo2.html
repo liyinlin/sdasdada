@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="IE=edge" >
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link type="text/css" media="screen and (max-width: 1366px)" href="css/map_index1.css" rel="stylesheet"/>
+		<link type="text/css" media="screen and (min-width: 1367px)" href="css/map_index.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" id="ln"/>
+		<link rel="stylesheet" href="css/dafanwei.css" />
+		<link rel="stylesheet" href="css/city_down.css" />
+		<link rel="stylesheet" href="css/jiache.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/lin.js"></script>
+	</head>
+	<style>
+			.search_bus{
+				background: url(img/bus.png) 0 0 no-repeat;
+			}
+			.search_cun{
+				background: url(img/dingweis.png) 0 0 no-repeat;
+			}
+			.search_car{
+				background: url(img/addcar.png) 0 0 no-repeat;
+			}
+		</style>
+	<body>
+		<div class="header">
+			<div class="h_con_le">
+				<img src="img/logo_bg.png"/>
+			</div>
+			<div class="h_con_ri">
+				<div class="h_con_ri__le">
+					<div class="sousuo">
+						<div class="sousuo_con">
+							<div class="sousuo1" style="display: none;">
+							<i class="close"></i>
+							<input type="text" value="请输入要搜索的关键字" class="sou" />
+						</div>
+						<div class="sousuo2" style="display: none;">
+							<input type="text" value="请输入起点" class="bus_left" />
+							<div class="bus_qh"></div>
+							<input type="text" value="请输入终点" class="bus_rt" />
+						</div>
+						<div class="clear"></div>
+						<div class="sousuo3" style="display: block;">
+							<input type="text" value="请输入起点" class="car_left" />
+							<div class="bus_qh"></div>
+							<div class="addrout">
+								<div class="add_tj">
+									<span class="add_tj_left">1</span>
+									<input type="text" class="add_tj_exp"/>
+									<span class="delet">
+										<img src="img/delete.jpg" />
+									</span>
+								</div>
+							</div>
+							<div class="jia_jiahao"></div>
+							<input type="text" value="请输入终点" class="car_rt" />
+							
+						</div>
+						</div>
+						<div class="clear"></div>
+						<ul class="sou_fenlei">
+							<li class="fo">
+								<a href="#">
+									<span class="search_cun"></span>
+								地点
+								</a>
+							</li>
+							<li class="bus">
+								<a href="#">
+									<span class="search_bus"></span>
+								公交
+								</a>
+							</li>
+							<li class="car addc">
+								<a href="#" class="addcl">
+									<span class="search_car"></span>
+								驾车
+								</a>
+							</li>
+						</ul>
+
+					</div>
+					<div class="search_left">
+						<input type="button"  class="sou_btn"/>
+					</div>
+				</div>
+				<div class="h_con_ri__ri">
+					<div class="dl">
+						<img src="img/no_login.png" />
+					<a class="login">登录</a>
+					</div>
+					<div class="grzx">
+						<img src="img/login_ren.png" />
+					<a class="gr">个人中心</a>
+					<span>丨</span>
+					<a class="tc">退出</a>
+					</div>
+				</div>
+			</div>
+			<div class="down_city down_citys">
+							<ul class="down_city_list down_city_lists" >
+								<li><span class="c_le">秦山</span><span class="c_ri">秦皇岛市山海关区</span></li>
+								<li><span class="c_le">秦庄</span><span class="c_ri">秦皇岛市昌黎区</span></li>
+								<li><span class="c_le">秦皇岛秦东商会</span><span class="c_ri">秦皇岛市山海关区</span></li>
+								<li><span class="c_le">秦皇岛秦海酒店</span><span class="c_ri">秦皇岛市山海关区</span></li>
+								<li><span class="c_le">秦二路</span><span class="c_ri">秦皇岛市海港区</span></li>
+								<li><span class="c_le">秦福路</span><span class="c_ri">秦皇岛市海港区</span></li>
+								<li><span class="c_le">秦安街</span><span class="c_ri">秦皇岛市海港区</span></li>
+								<li><span class="c_le">秦安街</span><span class="c_ri">秦皇岛市海港区</span></li>
+								<li><span class="c_le">秦安街</span><span class="c_ri">秦皇岛市海港区</span></li>
+								<li><span class="c_le">秦安街</span><span class="c_ri">秦皇岛市海港区</span></li>
+							</ul>
+						</div>
+		</div>
+		<div class="con_le" style="height: 870px;">
+			<div class="con_le_top">
+				<div>
+					<ul>
+						<li class="libg lifl">
+							<a >
+							<span class="sp_le">
+								<span class="fl"></span>
+							分类
+							</span>
+							</a>
+						</li>
+						<li class="lisc">
+							<a href="map_shoucang.html" target="_self">
+								<span class="sp_le ">
+								<span class="sc"></span>
+							<span>收藏</span>
+							</span>
+							</a>
+							
+						</li>
+					</ul>
+				</div>
+				
+			</div>
+					<div class="route_all_start">
+						<div class="change_top">
+							<div class="change_start_left">
+								<div class="routeSelectStart"></div>
+								<span>起点：教师村</span>
+							</div>
+							<div class="change_top_rt" style="display: block;"></div>
+								
+							
+						</div>
+					<div class="beg_con" style="display: block;">
+						
+						<div class="pub_beg route_start_1">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市岳麓区咸嘉湖街道咸嘉新...</div>
+								</div>
+								<div class="pub_beg_rt"></div>
+								</div>
+								<div class="pub_beg route_start_2">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市开福区</div>
+								</div>
+								<div class="pub_beg_rt"></div>
+								</div>
+								<div class="pub_beg route_start_3">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">七中教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市开福区东风路街道德雅路...</div>
+								</div>
+								<div class="pub_beg_rt"></div>
+								</div>
+								<div class="pub_beg route_start_4">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">金岸教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市长沙县星沙街道特立路128号</div>
+								</div>
+								<div class="pub_beg_rt"></div>
+								</div>
+								<div class="pub_beg route_start_5">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">雨花区教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市雨花区雨花亭街道自然社...</div>
+								</div>
+								<div class="pub_beg_rt"></div>
+								</div>
+								<div class="bpgd">
+									<a class="bpgdal">1</a>
+									<a class="bpgd_a">2</a>
+									<a class="bpgd_a">3</a>
+									<a class="bpgd_a">4</a>
+									<a class="bpgd_a">5</a>
+									<a class="bpgd_a">下一页</a>
+								</div>
+								
+					</div>
+					</div>	
+				<div class="route_all_dest">
+						<div class="change_top">
+							<div class="change_dest_left">
+								<div class="routeSelectDest"></div>
+								<span>终点：图书馆</span>
+							</div>
+							<div class="change_top_rt" style="display: none;">
+								
+							</div>
+						</div>
+						<div class="beg_con">
+						
+						<div class="pub_beg route_dest_1">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市岳麓区咸嘉湖街道咸嘉新...</div>
+								</div>
+								<div class="pub_last_rt"></div>
+								</div>
+								<div class="pub_beg route_dest_2">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市开福区</div>
+								</div>
+								<div class="pub_last_rt"></div>
+								</div>
+								<div class="pub_beg route_dest_3">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">七中教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市开福区东风路街道德雅路...</div>
+								</div>
+								<div class="pub_last_rt"></div>
+								</div>
+								<div class="pub_beg route_dest_4">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">金岸教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市长沙县星沙街道特立路128号</div>
+								</div>
+								<div class="pub_last_rt"></div>
+								</div>
+								<div class="pub_beg route_dest_5">
+								<div class="pub_beg_left"></div>
+								<div class="pub_beg_con">
+									<div class="beg_tit">雨花区教师村</div>
+									<div class="beg_towtit">地址：湖南省长沙市雨花区雨花亭街道自然社...</div>
+								</div>
+								<div class="pub_last_rt"></div>
+								</div>
+								<div class="bpgd">
+									<a class="bpgdal">1</a>
+									<a class="bpgd_a">2</a>
+									<a class="bpgd_a">3</a>
+									<a class="bpgd_a">4</a>
+									<a class="bpgd_a">5</a>
+									<a class="bpgd_a">下一页</a>
+								</div>
+								
+					</div>
+					</div>	
+				
+					<div class="sc_dowan">
+				<div class="sc_denglu">
+					<div class="sc_sbt_out">
+						<div class="sc_dl_le">
+							您尚未登录，请<a>登录</a>后使用!
+						</div>
+						<div class="sc_dl_ri">
+							<input type="button" />
+						</div>
+					</div>
+				</div>
+				<div class="sc_hide">
+					<div class="sc_sbt">
+					<div class="sc_sbt_out">
+						<div class="sc_sbt_le">
+							<input type="text"  value="输入标绘名称"/>
+						</div>
+						<div class="sc_sbt_ri">
+							<input type="button" />
+						</div>
+					</div>
+				</div>
+				<ul class="sc_li">
+					<li>
+						<a>
+							<i class="ding"></i>
+							常去地点123
+							<i class="dclear"></i>
+						</a>
+
+					</li>
+					<li>
+						<a>
+							<i class="ding"></i>
+							常去地点123
+							<i class="dclear"></i>
+						</a>
+
+					</li>
+					<li>
+						<a>
+							<i class="ding"></i>
+							常去地点123
+							<i class="dclear"></i>
+						</a>
+
+					</li>
+					
+				</ul>
+				</div>
+				
+			</div>
+		</div>
+		<div class="con_ri">
+			<div class="shouqi"><</div>
+				<div class="all_path">
+					<div>
+						<div class="allp">
+							<div class="pub_path1">
+								<div class="hoverType">
+								<div class="map_top">
+									<div class="imgType"></div>
+								</div>
+								<div class="map_bom">影像</div>
+							</div>
+							</div>
+							<div class="pub_path1 pt" style="display: none;">
+								<div class="hoverType">
+								<div class="map_top">
+									<div class="terType"></div>
+								</div>
+								<div class="map_bom">地形</div>
+							</div>
+							</div>
+							<div class="pub_path1 pt2" style="display: none;">
+								<div class="hoverType">
+								<div class="map_top">
+									<div class="glbType"></div>
+								</div>
+								<div class="map_bom">三维</div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="vista">
+					<div class="proButtonImg"></div>
+				</div>
+				<div class="allrttop" id="tool_container">
+			<!--左工具栏-->
+			<div class="alright_top_lt">
+				<div class="city" id="areaCity">
+					<span id="country">中国</span><span>></span><span id="citySpan">
+						<span id="city">北京</span> 
+						<span id="changeArea" style="margin-top: 10px;" class="raang_more"></span>
+					</span>
+				</div>
+				<div id='weather' class="weather">
+					<span class="weatherImg"></span>
+				<span>33℃~20℃</span>
+				</div>
+			</div>
+			<!--右面工具栏-->
+			<div class="alright_top_rt">
+				<ul>
+					<li class="view" ><a class="viewbg"><span class='viewlabel'></span>图层</a>
+					<ul class="v_down">
+							<li><a><span
+									class='toolcjlabel'></span>地名标注</a></li>
+							<li ><a><span
+									class='toolcmlabel'></span>天气实况</a></li>
+							<li ><a><span
+									class='toolfxlabel'></span>卫星云图</a></li>
+							<li ><a><span
+									class='tooldylabel'></span>行政区域</a></li>
+							<li ><a><span
+									class='tooldylabel'></span>旅游景点</a></li>
+						</ul></li>
+					<li class="tool" id="tLi">
+						<a class="toolbg" id="toolType">
+						<span class='toollabel'></span>工具</a>
+						<ul class="v_down">
+										<li>
+											<a><span class='toolcjlabel tl'></span>测距</a>
+										</li>
+										<li>
+											<a><span class='toolcmlabel tol'></span>测面</a>
+										</li>
+										<li>
+											<a>
+												<span class='toolfxlabel tfl'></span>标点</a>
+										</li>
+
+									</ul>
+						</li>
+						
+					<li class="delete" id="bClear"><a class="deletebg"><span class='dellabel'></span>清除</a></li>
+					
+					<li class="screen" id="fullScreen"><a class="screenbg"><span
+							class='scrlabel'></span>全屏</a></li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			
+		</div>
+		<div class="map" id="mapDiv" ></div>
+		
+		</div>
+		<div class="city_switch_box">
+			<div class="city_close"></div>
+			<div class="def_city_con">
+				<div class="def_city_set">
+					<span>当前城市：</span>
+					<span class="dq">北京</span>
+					<a class="def_city_btn">设为默认城市</a>
+				</div>
+			</div>
+			<div class="city_switch_search">
+				<input type="text" value="请输入城市名"/>
+				<div class="syn_bom"></div>
+			</div>
+			<div class="hot_city">
+				热门城市：
+				<a>北京</a>
+				<a>上海</a>
+				<a>广州</a>
+				<a>深圳</a>
+				<a>杭州</a>
+				<a>成都</a>
+				<a>武汉</a>
+				<a>南京</a>
+			</div>
+			<div class="tit_class">
+				<ul>
+					<li>
+						<a class="hover switch_city">中国</a>
+					</li>
+					<li>|</li>
+					<li>
+						<a class="switch_country">国家或地区</a>
+					</li>
+				</ul>
+			</div>
+			<div class="province_choose">
+				<span class="china_place">中国</span>
+				<a class="hover sf">按省份</a>
+				<a class="pinyin">按拼音</a>
+			</div>
+			<div class="city_list">
+				<div class="scrollBorderDiv">
+					<div style="width: 410px; position: absolute;">
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">直辖市</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">河北</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">山西</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">内蒙古</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">辽宁</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">吉林</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">黑龙江</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">江苏</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">浙江</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">安徽</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">福建</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line"><a class="city_list_province_name">江西</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">山东</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">河南</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">湖北</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">湖南</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">广东</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">广西</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">海南</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">四川</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">贵州</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">云南</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">西藏</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">山西</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">甘肃</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">青海</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">宁夏</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">新疆</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">香港</a>
+								</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">澳门</a></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">台湾</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="city_lists">
+				<div class="city_list_PINYIN">
+					<a>A</a>
+					<a>B</a>
+					<a>C</a>
+					<a>D</a>
+					<a>E</a>
+					<a>F</a>
+					<a>G</a>
+					<a>H</a>
+					<a>J</a>
+					<a>K</a>
+					<a>L</a>
+					<a>M</a>
+					<a>N</a>
+					<a>P</a>
+					<a>Q</a>
+					<a>R</a>
+					<a>S</a>
+					<a>T</a>
+					<a>W</a>
+					<a>X</a>
+					<a>Y</a>
+					<a>Z</a>
+				</div>
+				<div class="scrollBorderDiv">
+					<div style="width: 410px; position: absolute;">
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">A</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">B</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">C</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">D</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">E</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">F</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">G</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">H</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">J</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">K</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line"><a class="city_list_province_name">L</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">M</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">N</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">P</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">Q</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">R</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">S</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">T</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">W</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">X</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">Y</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">Z</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+			<div class="province_chooses">
+				<span class="china_place">全球</span>
+				<a class="hover dz">按大洲</a>
+				<a class="szm">按首字母</a>
+			</div>
+			<div class="citylist">
+				<div class="scrollBorderDiv">
+					<div style="width: 410px; position: absolute;">
+						
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">亚洲</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">欧洲</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">北美洲</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">南美洲</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">大洋洲</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">非洲</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="citylistss">
+				<div class="city_list_PINYIN">
+					<a>A</a>
+					<a>B</a>
+					<a>C</a>
+					<a>D</a>
+					<a>E</a>
+					<a>F</a>
+					<a>G</a>
+					<a>H</a>
+					<a>I</a>
+					<a>J</a>
+					<a>K</a>
+					<a>L</a>
+					<a>M</a>
+					<a>N</a>
+					<a>O</a>
+					<a>P</a>
+					<a>Q</a>
+					<a>R</a>
+					<a>S</a>
+					<a>T</a>
+					<a>U</a>
+					<a>V</a>
+					<a>W</a>
+					<a>X</a>
+					<a>Y</a>
+					<a>Z</a>
+				</div>
+				<div class="scrollBorderDiv">
+					<div style="width: 410px; position: absolute;">
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">A</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">B</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">C</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">D</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">E</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">F</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">G</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">H</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">I</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">J</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">K</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line"><a class="city_list_province_name">L</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">M</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">N</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">O</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">P</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">Q</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">R</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">S</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">T</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">U</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">V</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">W</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">X</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+							<a class="city_list_province_name">Y</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div></div>
+						</div>
+						<div class="city_list_province">
+							<div class="city_list_province_line">
+								<a class="city_list_province_name">Z</a>
+								<div class="city_list_province_right">
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									<a>重庆</a>
+									<a>北京</a>
+									<a>天津</a>
+									<a>上海</a>
+									
+								</div>
+							</div>
+						</div>
+						
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--弹窗-->
+						<div class="tanchuang">
+							
+						</div>
+							<div class="xmlb_con xmlb_cons" id="tanchuang">
+							<div class="aqcl tc">	
+								<div class="aqcl_title2">用户登录<i></i></div>
+								<ul class="lognin_box">
+									<li>
+										<i class="l_ren"></i><input type="text" value="请输入用户名" class="user"/><i class="l_cha"></i>
+									</li>
+									<li>
+										<i class="l_suo"></i><input type="password"  class="pwd"/><i class="l_cha2"></i>
+										<span class="di_wenzi">请输入密码</span>
+									</li>
+									<li>
+										<input type="button" class="login_sbt"/>
+									</li>
+									
+								</ul>
+								
+							</div>
+							
+						</div>
+
+	</body>
+	<script type="text/javascript" src="js/map_index.js"></script>
+	<script type="text/javascript" src="js/map_bus.js"></script>
+	<script type="text/javascript" src="js/jiache.js" ></script>
+	<script type="text/javascript" src="http://api.tianditu.com/js/maps.js"></script>
+	
+	<script>
+		var map;
+		var lnglats;//点数据。
+		var zoom = 14;
+        var markers = [];
+			var lnglats = [{
+					"B": "29.044409",
+					"L": "117.483741",
+					"PName": "1111",
+					"Status": 1
+				},
+				{
+					"B": "29.044409",
+					"L": "117.493741",
+					"PName": "2222",
+					"Status": 2
+				},
+				{
+					"B": "29.035419",
+					"L": "117.483741",
+					"PName": "3333",
+					"Status": 3
+				},
+				{
+					"B": "29.035419",
+					"L": "117.469956",
+					"PName": "第四个点",
+					"Status": 4
+				},
+				{
+					"B": "29.030288",
+					"L": "117.443466",
+					"PName": "第五个点",
+					"Status": 5
+				}
+				
+			];
+
+function loadMap(){
+			try{
+				map = new TMap("mapDiv"); //初始化地图对象
+             	map.centerAndZoom(new TLngLat(117.483552, 29.046463), zoom);//设置显示地图的中心点和级别
+             	map.enableHandleMouseScroll(); 
+             	var config = {
+
+				type: "TMAP_NAVIGATION_CONTROL_LARGE", //缩放平移的显示类型
+
+				anchor: "TMAP_ANCHOR_TOP_RIGHT", //缩放平移控件显示的位置
+
+				offset: [0, 0], //缩放平移控件的偏移值
+
+				showZoomInfo: true //是否显示级别提示信息，true表示显示，false表示隐藏。
+
+			};
+
+			//创建缩放平移控件对象
+
+			control = new TNavigationControl(config);
+
+			//添加缩放平移控件
+
+			map.addControl(control);
+
+             	//允许鼠标双击放大地图
+             } catch(err) {
+             	alert('天地图加载不成功，请稍候再试！');
+             }
+       }
+		
+function addNavControl()
+
+		{
+
+			map.removeControl(control);
+
+			//获得缩放平移控件的样式
+
+			var selectNavCss = document.getElementById("selectnavcss");
+
+			var index = selectNavCss.selectedIndex;
+
+			var controlCss = selectNavCss.options[index].value;
+
+			//获得缩放平移控件的位置
+
+			var selectNavPosition = document.getElementById("selectnavposition");
+
+			var index = selectNavPosition.selectedIndex;
+
+			var controlPosition = selectNavPosition.options[index].value;
+
+			//添加缩放平移控件
+
+			var config = {
+
+				type: controlCss, //缩放平移控件的显示类型
+
+				anchor: controlPosition //缩放平移控件显示的位置
+
+			};
+
+			control = new TNavigationControl(config);
+
+			map.addControl(control);
+
+		}
+		//绘制多个marker。
+		function drawTMakers(lnglats) {
+				markers.length = 0;
+				if(lnglats.length != 0) {
+					var iconurl = 'img/1.png';
+					var iconurl1 = 'img/2.png';
+					var iconurl2 = 'img/3.png';
+					var iconurl3 = 'img/4.png';
+					var iconurl4 = 'img/5.png';
+					icon = new TIcon(iconurl, new TSize(29, 30), {
+						anchor: new TPixel(12, 12)
+					}); //两种图标，根据status判断用哪一种。  
+					icon1 = new TIcon(iconurl1, new TSize(29, 30), {
+						anchor: new TPixel(12, 12)
+					});
+					icon2 = new TIcon(iconurl2, new TSize(29, 30), {
+						anchor: new TPixel(12, 12)
+					}); //两种图标，根据status判断用哪一种。  
+					icon3 = new TIcon(iconurl3, new TSize(29, 30), {
+						anchor: new TPixel(12, 12)
+					});
+					icon4 = new TIcon(iconurl4, new TSize(29, 30), {
+						anchor: new TPixel(12, 12)
+					}); //两种图标，根据status判断用哪一种。 
+					
+
+					for(var i = 0; i < lnglats.length; i = i + 1) {
+						if(lnglats[i].Status == 1) {
+							markers[i] = drawTMaker(lnglats[i], icon);
+						} else if(lnglats[i].Status == 2) {
+							markers[i] = drawTMaker(lnglats[i], icon1);
+						} else if(lnglats[i].Status == 3) {
+							markers[i] = drawTMaker(lnglats[i], icon2);
+						} else if(lnglats[i].Status == 4) {
+							markers[i] = drawTMaker(lnglats[i], icon3);
+						}  else {
+							markers[i] = drawTMaker(lnglats[i], icon4);
+						}
+						markers[i].id = i;
+					}
+				}
+			}
+		//往地图上添加一个marker。传入参数坐标信息lnglat。传入参数图标信息。
+		function drawTMaker(lnglat,icon){
+			var marker =  new TMarker(new TLngLat(lnglat.L, lnglat.B), {icon: icon});
+			console.log(lnglat.L);console.log(lnglat.B);
+			map.addOverLay(marker);
+			return marker;
+		}
+
+		loadMap();///加载地图
+		drawTMakers(lnglats);//绘制标注。
+//		addTEvent(markers,lnglats);
+</script>
+</html>

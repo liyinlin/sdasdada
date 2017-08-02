@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/jibenxinxi.css" />
+		<!--<link rel="stylesheet" href="css/tianjiadidian.css" />-->
+		<script type="text/javascript" src="http://api.tianditu.com/js/maps.js"></script>
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js" ></script>
+		
+	
+	</head>
+	<body onLoad="onLoad()">
+		<div class="header">
+			<div class="header_in">
+				<div class="header_in_le">
+					<p class="tit">特色村镇数据网</p>
+					<p class="shu"></p>
+					<p class="gr">个人中心</p>
+				</div>
+				<div class="header_in_ri">
+					<p class="fh"><a class="fanhui"><span class="ditu"></span>返回地图</a></p>
+					<p class="shu1"></p>
+					<p class="tc"><a class="tuichu">退出</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="con_box">
+			<div class="nav">
+				<ul>
+					<li>
+						<a href="###">
+							<p class="xinxi_top">
+							<img src="img/nav_xinxis.png" />
+						</p>
+						<p class="xinxi_bot">基本信息</p>
+						</a>
+						
+					</li>
+					<li>
+						<a href="###">
+							<p class="xinxi_top">
+							<img src="img/nav_didian.png" />
+						</p>
+						<p class="xinxi_bot">我的地点</p>
+						</a>
+						
+					</li>
+					<li class="addc">
+						<a href="###">
+							<p class="xinxi_top">
+							<img src="img/biaohuis.png" />
+						</p>
+						<p class="xinxi_bot addb">我的标绘</p>
+						</a>
+						
+					</li>
+				</ul>
+			</div>
+			<div class="con_box_ri">
+				<div class="box_title">
+					<p class="box_title_le">我的标绘</p>
+				</div>
+				<div class="con_box_ri_neirong">
+					<div class="biaohui_le">
+								<div class="out_sbt">
+								<div class="sbt_sousuo">
+									<input type="text" class="sbt_sousuo_le" />
+									<var class="biaohui_bot">输入标绘名称</var>
+									<input type="button" class="sbt_sousuo_ri"/>
+								</div>
+								</div>
+						
+							<ul class="bniaohui_tit">
+							<li class="bniaohui_tit_top">
+								<div>
+									<div class="biaohui_con">
+										<i class="tuding"></i>
+										<span>我的标注123</span>
+										<i class="biaohui_del"></i>
+									</div>
+								</div>
+							</li>
+							<li class="bniaohui_tit_top">
+								<div>
+									<div class="biaohui_con">
+										<i class="tuding"></i>
+										<span>我的标注1234</span>
+										<i class="biaohui_del"></i>
+									</div>
+								</div>
+							</li>
+							<li class="bniaohui_tit_top">
+								<div>
+									<div class="biaohui_con">
+										<i class="tuding"></i>
+										<span>我的标注12345</span>
+										<i class="biaohui_del"></i>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="biaohui_map">
+						  <div id="mapDiv" style="width:100%; height:100%"></div> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--标绘删除弹窗-->
+			<div class="tanchuang2">
+
+			</div>
+			<div class="xmlb_con" id="tanchuang">
+				<div class="pho_shan_top">
+					确定要删除标绘吗
+				</div>
+				<div class="pho_shan_bot">
+					<input type="button" class="queding" />
+					<input type="button" class="quxiaos" />
+				</div>
+			</div>
+	</body>
+		<script>
+		$(window).load(function(){
+			var h=$(".header").height();
+		var he=$(window).height();
+		var hei=he-h;
+		 $(".con_box").height(hei);
+		})
+		
+	</script>
+	
+	<script>
+	    var map;
+	    var zoom = 8;
+	    function onLoad()
+	    {
+	        var config = {
+	            projection: "EPSG:4326"
+	        }
+	        //初始化地图对象
+	        map=new TMap("mapDiv",config);
+	        //设置显示地图的中心点和级别
+	        map.centerAndZoom(new TLngLat(109.580205,31.940776),zoom);
+	         var config = {
+	            type:"TMAP_NAVIGATION_CONTROL_ZOOM",   //缩放平移的显示类型
+	            anchor:"TMAP_ANCHOR_TOP_LEFT",          //缩放平移控件显示的位置
+	            offset:[0,0],                           //缩放平移控件的偏移值
+	            showZoomInfo:true                       //是否显示级别提示信息，true表示显示，false表示隐藏。
+
+	        }; 
+	         control=new TNavigationControl(config);
+	        //添加缩放平移控件
+	        map.enableHandleMouseScroll(); 
+	        map.addControl(control); 
+	    }
+	    function addNavControl()
+	    {
+	        map.removeControl(control);
+	        //获得缩放平移控件的样式
+	        var selectNavCss = document.getElementById("selectnavcss");
+	        var index = selectNavCss.selectedIndex;
+	        var controlCss = selectNavCss.options[index].value;
+	        //获得缩放平移控件的位置
+	        var selectNavPosition = document.getElementById("selectnavposition");
+	        var index = selectNavPosition.selectedIndex;
+	        var controlPosition = selectNavPosition.options[index].value;
+	        //添加缩放平移控件
+	        var config = {
+	            type:controlCss,        //缩放平移控件的显示类型
+	            anchor:controlPosition  //缩放平移控件显示的位置
+	        };
+	        control = new TNavigationControl(config);
+	        map.addControl(control);
+	    } 
+</script> 
+	<script type="text/javascript" src="js/gerenzhongxin.js" ></script>
+	<script>
+		$(function() {
+			$(".biaohui_del").click(function() {
+				var con = document.getElementById("tanchuang");
+				$(".tanchuang2").show();
+				$(".xmlb_con").show();
+				//		parent.zhezhaoshow();
+				//				setInterval(function() {
+				//					var pmw = document.documentElement.clientWidth || document.body.clientWidth;
+				//					var pmh = document.documentElement.clientHeight || document.body.clientHeight;
+				//					con.style.left = (pmw - con.offsetWidth) / 2 + 'px';
+				//					con.style.top = (pmh - con.offsetHeight) / 2 + 'px';
+				//				}, 1);
+				$(".guanbi").click(function() {
+					$(".tanchuang2").hide();
+					$(".xmlb_con").hide();
+
+				})
+			})
+		})
+	</script>
+</html>

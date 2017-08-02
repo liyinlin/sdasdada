@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title></title>
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/jibenxinxi.css" />
+		<link rel="stylesheet" href="css/tianjiadidian.css" />
+		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript" src="http://api.tianditu.com/js/maps.js"></script>
+	</head>
+
+	<body>
+		<div class="header">
+			<div class="header_in">
+				<div class="header_in_le">
+					<p class="tit">特色村镇数据网</p>
+					<p class="shu"></p>
+					<p class="gr">个人中心</p>
+				</div>
+				<div class="header_in_ri">
+					<p class="fh">
+						<a class="fanhui"><span class="ditu"></span>返回地图</a>
+					</p>
+					<p class="shu1"></p>
+					<p class="tc">
+						<a class="tuichu">退出</a>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="con_box">
+			<div class="nav">
+				<ul>
+					<li>
+						<a href="###">
+							<p class="xinxi_top">
+								<img src="img/nav_xinxis.png" />
+							</p>
+							<p class="xinxi_bot">基本信息</p>
+						</a>
+
+					</li>
+					<li class="addc">
+						<a href="###">
+							<p class="xinxi_top">
+								<img src="img/nav_didians.png" />
+							</p>
+							<p class="xinxi_bot addb">我的地点</p>
+						</a>
+
+					</li>
+					<li>
+						<a href="###">
+							<p class="xinxi_top">
+								<img src="img/nav_biaohui.png" />
+							</p>
+							<p class="xinxi_bot">我的标绘</p>
+						</a>
+
+					</li>
+				</ul>
+			</div>
+			<div class="con_box_ri">
+				<div class="box_title">
+					<p class="box_title_le">我的地点</p>
+				</div>
+				<div class="con_box_ri_neirong">
+					<div class="neirong_tit">
+						添加地点
+					</div>
+					<div class="nr">
+						<div>
+							<div>
+								<div class="clearfloat m_top ">
+									<span class="le lle">输入地点&nbsp;&nbsp;:</span>
+									<div class="neibu">
+										<p class="dizhi_out">
+											<input type="text" name="" id="" class="xiangshidizhi shurudidian" />
+											<var class="dizhi_bot shuru">请输入地点名称</var>
+										</p>
+									</div>
+								</div>
+
+							</div>
+							<div>
+								<div class="clearfloat m_top tianjiadidian">
+									<span class="le lle">地址&nbsp;&nbsp;:</span>
+									<div class="neibu">
+										<p class="se_top">
+											<select name="" style="width: 22%;">
+												<option value="">请选择省</option>
+											</select>
+											<select name="" style="width: 22%;">
+												<option value="">请选择城市</option>
+											</select>
+											<select name="" style="width: 22%;margin-right: 0px;">
+												<option value="">请选择区县</option>
+											</select>
+										</p>
+										<p class="dizhi_out">
+											<input type="text" name="" id="" class="xiangshidizhi shurudizhi" />
+											<var class="dizhi_bot dizhi">请输入详细地址</var>
+										</p>
+									</div>
+								</div>
+
+							</div>
+
+							<div>
+								<div class="clearfloat m_top ">
+									<span class="le lle">精确位置&nbsp;&nbsp;:</span>
+									<div class="neibu jingqueweizhi">
+										<div id="allmap">
+
+										</div>
+										<span class="tianjiadidian_bot">请在地图上标注精确位置</span>
+									</div>
+								</div>
+
+							</div>
+							<div>
+								<div class="clearfloat m_top tianjiadidian">
+									<span class="le lle">分类&nbsp;&nbsp;:</span>
+									<div class="neibu">
+										<p class="se_top">
+											<select name="" style="width: 22%;">
+												<option value="">请选分类</option>
+											</select>
+										</p>
+									</div>
+								</div>
+
+							</div>
+							<div>
+								<div class="clearfloat m_top tianjiadidian">
+									<span class="le lle">照片&nbsp;&nbsp;:</span>
+									<div class="neibu">
+										<div id="addCommodityIndex">
+
+											<div class="input-group row">
+
+												<div class="col-sm-9 big-photo">
+													<div id="preview">
+														<img id="imghead" border="0" src="img/tianjiazhaopian.png"  onclick="$('#previewImg').click();">
+													</div>
+													<input type="file" onchange="previewImage(this)" style="display: none;" id="previewImg">
+													<!--<input id="uploaderInput" class="uploader__input" style="display: none;" type="file" accept="" multiple="">-->
+												</div>
+											</div>
+											<!--input-group end-->
+
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div>
+								<div class="clearfloat m_top tianjiadidian">
+									<span class="le lle">介绍&nbsp;&nbsp;:</span>
+									<div class="neibu">
+										<textarea></textarea>
+									</div>
+								</div>
+
+							</div>
+							<div class="sbt">
+								<p>
+									<input type="button" value="提交" class="tijiao" />
+									<input type="button" value="取消" class="quxiao" />
+									<input type="button" value="保存" class="baocun" />
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--地图弹窗-->
+			<div class="tanchuang">
+
+			</div>
+			<div class="xmlb_cons" id="tanchuang">
+				<div class="map_top">
+					<span>标注低点位置</span><span>丨</span><span>当前层级：14级</span>
+					<i class="guanbi"></i>
+				</div>
+				<div id="map">
+
+				</div>
+				<div class="map_bot">
+					<input type="button" name="" id="" value="位置选好了，确定标注" class="map_sbt" />
+				</div>
+				<script>
+					var map;
+					var zoom = 14;
+
+					function onLoad() {
+						//初始化地图对象
+						map = new TMap("map");
+						//设置显示地图的中心点和级别
+						map.centerAndZoom(new TLngLat(117.278213, 29.31644), zoom);
+						//允许鼠标滚轮缩放地图
+						map.enableHandleMouseScroll();
+						
+						//创建图片对象
+						var icon = new TIcon("img/ditubiaozhu.png", new TSize(19, 27), {
+							anchor: new TPixel(9, 27)
+						});
+						//向地图上添加自定义标注
+						var marker = new TMarker(new TLngLat(117.278213, 29.31644), {
+							icon: icon
+						});
+						map.addOverLay(marker);
+					}
+					onLoad();
+					
+				</script>
+			</div>
+	</body>
+	<script>
+		$(window).load(function(){
+			var h = $(".header").height();
+		var he = $(window).height();
+		var hei = he - h;
+		$(".con_box").height(1120);
+		})
+		
+	</script>
+	<script type="text/javascript" src="js/gerenzhongxin.js"></script>
+	<script>
+		var map;
+		var zoom = 12;
+
+		function onLoad() {
+			//初始化地图对象
+			map = new TMap("allmap");
+			//设置显示地图的中心点和级别
+			map.centerAndZoom(new TLngLat(116.531808, 40.022007), zoom);
+			//允许鼠标滚轮缩放地图
+			map.enableHandleMouseScroll();
+			var config = {
+							type: "TMAP_NAVIGATION_CONTROL_ZOOM", //缩放平移的显示类型
+							anchor: "TMAP_ANCHOR_TOP_RIGHT", //缩放平移控件显示的位置
+							offset: [0, 0], //缩放平移控件的偏移值
+							showZoomInfo: true //是否显示级别提示信息，true表示显示，false表示隐藏。
+
+						};
+						control = new TNavigationControl(config);
+						map.addControl(control);
+			//创建图片对象
+			var icon = new TIcon("img/ditubiaozhu.png", new TSize(19, 27), {
+				anchor: new TPixel(9, 27)
+			});
+			//向地图上添加自定义标注
+			var marker = new TMarker(new TLngLat(116.531808, 40.022007), {
+				icon: icon
+			});
+			map.addOverLay(marker);
+		}
+		onLoad();
+		function addNavControl() {
+						map.removeControl(control);
+						//获得缩放平移控件的样式
+						var selectNavCss = document.getElementById("selectnavcss");
+						var index = selectNavCss.selectedIndex;
+						var controlCss = selectNavCss.options[index].value;
+						//获得缩放平移控件的位置
+						var selectNavPosition = document.getElementById("selectnavposition");
+						var index = selectNavPosition.selectedIndex;
+						var controlPosition = selectNavPosition.options[index].value;
+						//添加缩放平移控件
+						var config = {
+							type: controlCss, //缩放平移控件的显示类型
+							anchor: controlPosition //缩放平移控件显示的位置
+						};
+						control = new TNavigationControl(config);
+						map.addControl(control);
+					}
+	</script>
+	<!--图片上传-->
+	<script>
+		//图片上传预览    IE是用了滤镜。
+		function previewImage(file) {
+			var MAXWIDTH = 90;
+			var MAXHEIGHT = 90;
+			var div = document.getElementById('preview');
+			if(file.files && file.files[0]) {
+				div.innerHTML = '<img id=imghead onclick=$("#previewImg").click()>';
+				var img = document.getElementById('imghead');
+				img.onload = function() {
+					var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+					img.width = rect.width;
+					img.height = rect.height;
+					//                 img.style.marginLeft = rect.left+'px';
+					img.style.marginTop = rect.top + 'px';
+				}
+				var reader = new FileReader();
+				reader.onload = function(evt) {
+					img.src = evt.target.result;
+				}
+				reader.readAsDataURL(file.files[0]);
+			} else //兼容IE
+			{
+				var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+				file.select();
+				var src = document.selection.createRange().text;
+				div.innerHTML = '<img id=imghead>';
+				var img = document.getElementById('imghead');
+				img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+				var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+				status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+				div.innerHTML = "<div id=divhead style='width:" + rect.width + "px;height:" + rect.height + "px;margin-top:" + rect.top + "px;" + sFilter + src + "\"'></div>";
+			}
+		}
+
+		function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+			var param = {
+				top: 0,
+				left: 0,
+				width: width,
+				height: height
+			};
+			if(width > maxWidth || height > maxHeight) {
+				rateWidth = width / maxWidth;
+				rateHeight = height / maxHeight;
+
+				if(rateWidth > rateHeight) {
+					param.width = maxWidth;
+					param.height = Math.round(height / rateWidth);
+				} else {
+					param.width = Math.round(width / rateHeight);
+					param.height = maxHeight;
+				}
+			}
+			param.left = Math.round((maxWidth - param.width) / 2);
+			param.top = Math.round((maxHeight - param.height) / 2);
+			return param;
+		}
+	</script>
+	<!--地图弹窗-->
+	<script>
+		$(function() {
+			$(".tianjiadidian_bot").click(function() {
+				var con = document.getElementById("tanchuang");
+				$(".tanchuang").show();
+				$(".xmlb_cons").show();
+				//		parent.zhezhaoshow();
+				setInterval(function() {
+					var pmw = document.documentElement.clientWidth || document.body.clientWidth;
+					var pmh = document.documentElement.clientHeight || document.body.clientHeight;
+					con.style.left = (pmw - con.offsetWidth) / 2 + 'px';
+					con.style.top = (pmh - con.offsetHeight) / 2 + 'px';
+				}, 1);
+				$(".guanbi").click(function() {
+					$(".tanchuang").hide();
+					$(".xmlb_cons").hide();
+					//		parent.zhezhaohide();
+				})
+			})
+		})
+	</script>
+	<!--弹窗地图-->
+
+</html>
